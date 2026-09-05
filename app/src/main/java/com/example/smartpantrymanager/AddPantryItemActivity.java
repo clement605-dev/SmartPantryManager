@@ -59,12 +59,11 @@ public class AddPantryItemActivity extends AppCompatActivity {
 
             if (name.isEmpty()
                     || quantity.isEmpty()
-                    || unit.isEmpty()
-                    || expiryDate.isEmpty()) {
+                    || unit.isEmpty()) {
 
                 Toast.makeText(
                         AddPantryItemActivity.this,
-                        "Please fill in all fields",
+                        "Please fill in the required fields",
                         Toast.LENGTH_SHORT
                 ).show();
 
