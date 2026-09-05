@@ -74,6 +74,15 @@ public class AddPantryItemActivity extends AppCompatActivity {
 
             try {
                 quantityValue = Double.parseDouble(quantity);
+                if (quantityValue <= 0) {
+                    Toast.makeText(
+                            AddPantryItemActivity.this,
+                            "Quantity must be greater than 0",
+                            Toast.LENGTH_SHORT
+                    ).show();
+
+                    return;
+                }
             } catch (NumberFormatException e) {
 
                 Toast.makeText(
