@@ -4,6 +4,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -31,9 +32,18 @@ public class RecipeDetailActivity extends AppCompatActivity {
 
         int recipeId = getIntent().getIntExtra("recipe_id", -1);
 
-        if (recipeId != -1) {
-            loadRecipeDetails(recipeId);
+        if (recipeId == -1) {
+            Toast.makeText(
+                    RecipeDetailActivity.this,
+                    "Recipe could not be found",
+                    Toast.LENGTH_SHORT
+            ).show();
+
+            finish();
+            return;
         }
+
+        loadRecipeDetails(recipeId);
     }
 
     private void loadRecipeDetails(int recipeId) {
@@ -52,9 +62,24 @@ public class RecipeDetailActivity extends AppCompatActivity {
             String instructions = recipeCursor.getString(1);
 
             tvRecipeName.setText(recipeName);
+
             tvInstructions.setText(
                     "Preparation Instructions\n\n" + instructions
             );
+
+        } else {
+
+            recipeCursor.close();
+            db.close();
+
+            Toast.makeText(
+                    RecipeDetailActivity.this,
+                    "Recipe could not be found",
+                    Toast.LENGTH_SHORT
+            ).show();
+
+            finish();
+            return;
         }
 
         recipeCursor.close();
