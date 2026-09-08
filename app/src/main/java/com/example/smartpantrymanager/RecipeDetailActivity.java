@@ -3,6 +3,7 @@ package com.example.smartpantrymanager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,6 +28,9 @@ public class RecipeDetailActivity extends AppCompatActivity {
         tvRecipeName = findViewById(R.id.tvRecipeName);
         tvIngredients = findViewById(R.id.tvIngredients);
         tvInstructions = findViewById(R.id.tvInstructions);
+        Button btnBack = findViewById(R.id.btnBack);
+
+        btnBack.setOnClickListener(v -> finish());
 
         dbHelper = new DatabaseHelper(this);
 
