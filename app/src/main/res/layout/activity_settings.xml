@@ -29,6 +29,14 @@
         android:textSize="16sp"
         android:paddingBottom="24dp" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Database: SQLite"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:paddingBottom="16dp" />
+
     <Button
         android:id="@+id/btnAbout"
         android:layout_width="match_parent"
