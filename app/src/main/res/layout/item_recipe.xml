@@ -14,4 +14,14 @@
         android:textStyle="bold"
         android:padding="8dp" />
 
+    <TextView
+        android:id="@+id/tvRecipeSubtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tap to view ingredients and preparation instructions"
+        android:textSize="14sp"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="8dp" />
+
 </LinearLayout>
