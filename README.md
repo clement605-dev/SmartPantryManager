@@ -31,6 +31,8 @@ Smart Pantry Manager is a Java-based Android application designed to help users 
 
 The application uses SQLite for local data storage.
 
+SQLite was chosen because the application is designed to store pantry and recipe information directly on the user's device. It does not require an internet connection or a separate database server, making it suitable for this small mobile application.
+
 The database contains three main tables:
 
 - `pantry_items` - stores pantry ingredients
@@ -86,10 +88,17 @@ SmartPantryManager
 │       └── main
 │           ├── java
 │           │   └── com.example.smartpantrymanager
+│           │       ├── AddPantryItemActivity.java
+│           │       ├── MainActivity.java
+│           │       ├── PantryItemsActivity.java
+│           │       ├── RecipesActivity.java
+│           │       ├── SuggestedRecipesActivity.java
+│           │       ├── RecipeDetailActivity.java
+│           │       ├── SettingsActivity.java
+│           │       ├── PantryItem.java
 │           │       ├── adapters
 │           │       ├── database
-│           │       ├── models
-│           │       └── activities
+│           │       └── models
 │           │
 │           └── res
 │               ├── layout
