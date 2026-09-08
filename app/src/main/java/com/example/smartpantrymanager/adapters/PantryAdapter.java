@@ -63,9 +63,13 @@ public class PantryAdapter extends BaseAdapter {
         tvQuantity.setText(
                 "Quantity: " + item.getQuantity() + " " + item.getUnit()
         );
-        tvExpiry.setText(
-                "Expiry: " + item.getExpiryDate()
-        );
+        String expiryDate = item.getExpiryDate();
+
+        if (expiryDate == null || expiryDate.trim().isEmpty()) {
+            tvExpiry.setText("Expiry: Not specified");
+        } else {
+            tvExpiry.setText("Expiry: " + expiryDate);
+        }
         btnDelete.setOnClickListener(v -> {
             if (deleteListener != null) {
                 deleteListener.onDelete(item);
